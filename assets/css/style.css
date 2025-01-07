@@ -13,7 +13,8 @@
     background-color: #01000B;
 }
 
-.get-started-btn {
+.get-started-btn,
+.get-started-btn-1 {
     width: 172px;
     height: 52px;
     top: 24px;
@@ -97,6 +98,10 @@
     padding-left: 8px;
 }
 
+.pt-14 {
+    padding-top: 14px !important;
+}
+
 /******* gap property *******/
 .gap-24 {
     gap: 24px;
@@ -122,11 +127,6 @@
     transition: all 300ms linear;
 }
 
-
-.show-navbar {
-    right: 0 !important;
-}
-
 .menu-lines {
     width: 30px;
     height: 5px;
@@ -145,26 +145,21 @@
 }
 
 .rotate40 {
-    transform: rotate(40deg);
+    transform: rotate(42deg);
 }
 
 .rotate-45 {
-    transform: rotate(-45deg);
+    transform: rotate(-43deg);
 }
 
-
-/* .navbar-link:hover {
-    color: var(--sec);
-} */
+.alien-image {
+    animation: float 3s ease-in-out infinite;
+}
 
 .home-bg {
     background-image: url(/assets/images/header-bg-img.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.pr-221 {
-    padding-right: 221px;
 }
 
 .card-1 {
@@ -318,6 +313,20 @@
     mask-composite: exclude;
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @media (max-width:767.98px) {
     .head-2 {
         font-size: 25px;
@@ -338,8 +347,47 @@
     }
 }
 
-@media (max-width:992px) {
+@media (max-width:991.98px) {
     .faq {
         padding-left: 45px;
+    }
+
+    .get-started-btn {
+        display: none;
+    }
+}
+
+@media (min-width:992px) {
+    .get-started-btn-1 {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    .heading {
+        font-size: 48px !important;
+        line-height: normal !important;
+    }
+}
+
+
+@media (max-width:991.98px) {
+    .nav-link {
+        display: flex !important;
+        flex-direction: column;
+        background-color: black !important;
+        width: 100%;
+        min-height: 100vh;
+        position: fixed;
+        justify-content: center;
+        bottom: 0;
+        right: -100% !important;
+        top: 0%;
+        transition: all 300ms linear;
+        z-index: 5;
+    }
+
+    .show-navbar {
+        right: 0 !important;
     }
 }
