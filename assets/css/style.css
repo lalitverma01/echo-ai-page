@@ -4,14 +4,28 @@
 
 
 .bg-img {
-    background-image: url(../images/bg-img.png);
+    background-image: url(../images/header-bg-img.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 250px;
+    padding-bottom: 250px !important;
+    background-position: bottom;
+    z-index: 1 !important;
 }
 
 .bg-color {
     background-color: #01000B;
+}
+
+.image {
+    position: absolute;
+    top: 10% !important;
+    left: -100% !important;
+}
+
+.planet-img {
+    position: absolute;
+    top: 50% !important;
+    left: 0;
 }
 
 .get-started-btn,
@@ -290,14 +304,73 @@ div.slick-track {
 }
 
 .accordion-item {
+    background-color: #01000B !important;
     border: 1px solid #FFFFFF1A !important;
     border-radius: 12px !important;
     position: relative;
 }
 
+.accordion-button {
+    background-color: #01000B !important;
+}
+
+.accordion-button::after {
+    width: 20px !important;
+    background-image: url(../images/svg/arrow-svg.svg) !important;
+}
+
 .accordion-header .accordion-button {
     border-radius: 12px !important;
 }
+
+.accordion-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 12px !important;
+    background: linear-gradient(103.52deg, #3A3EF5 18.99%, #32C8F1 82.34%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+.accordion-button:not(.collapsed) {
+    position: relative;
+}
+
+.accordion-button:not(.collapsed)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    background: linear-gradient(103.52deg, #3A3EF5 18.99%, #32C8F1 82.34%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /******* footer *******/
 
@@ -308,6 +381,10 @@ div.slick-track {
     border-radius: 100px;
     padding: 6px 10px 10px 10px;
     background: linear-gradient(103.52deg, #3A3EF5 18.99%, #32C8F1 82.34%);
+}
+
+.about-us:hover {
+    color: #32C8F1 !important;
 }
 
 .line {
@@ -354,8 +431,26 @@ div.slick-track {
         text-align: center;
     }
 
+    .pt-156 {
+        padding-top: 0;
+    }
+
     .pt-356 {
         padding-top: 0px;
+    }
+
+    .card-1::before,
+    .card-2::before {
+        display: none !important;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .planet-img {
+        width: 100%;
     }
 }
 
@@ -372,6 +467,11 @@ div.slick-track {
 @media (min-width:992px) {
     .get-started-btn-1 {
         display: none;
+    }
+
+    .planet-img {
+        position: absolute;
+        top: 200px !important;
     }
 }
 
