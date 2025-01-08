@@ -13,6 +13,7 @@
     --lh-86: 86.4px;
     --opacity-70: 70%;
     --opacity-80: 80%;
+    --bg-color-ninja: #01000B;
 }
 
 .font-outfit {
@@ -69,4 +70,8 @@
 
 .opacity-80 {
     opacity: var(--opacity-80);
+}
+
+.bg-color {
+    background-color: var(--bg-color-ninja);
 }
