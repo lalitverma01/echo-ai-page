@@ -341,7 +341,11 @@ div.slick-track {
     }
 
     footer {
-        margin-top: 150px;
+        margin-top: 60px;
+    }
+
+    .mt-175 {
+        margin-top: 70px !important;
     }
 }
 
