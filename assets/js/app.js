@@ -6,22 +6,18 @@ const navbarbtn = () => {
     document.body.classList.toggle("overflow-hidden")
 }
 
-const accordionItems = document.querySelectorAll('.accordion-item');
-
-accordionItems.forEach((item) => {
-    item.addEventListener('click', () => {
-        accordionItems.forEach((otherItem) => {
-            otherItem.classList.remove('active');
-        });
-        item.classList.add('active');
+const accordionButtons = document.querySelectorAll('.accordion-button');
+accordionButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const activeAccordionItem = document.querySelector('.accordion-item.active');
+        const accordionItem = this.closest('.accordion-item');
+        accordionItem.classList.toggle('active') & activeAccordionItem.classList.remove("active")
     });
 });
 
-$('.Testimonials').slick({
+$('.slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
-    autoplay: true,
     arrows: false,
     dots: false,
     responsive: [
